@@ -22,3 +22,19 @@ iv) Update the default security group
 
 We need to follow the following steps for establishing a secure communication with AWS IoT to useit to securely pass messages to your robot: create certificates, attach a new policy to our certificate and get the AWS IoT endpoint
 
+## Setting up the robot
+
+i) Create an environment for the robot in AWS RoboMaker.
+ii) Set the ENDPOINT and CERTS_LOCATION variables as follows in the Cloud9 Terminal:
+export ENDPOINT=<your-AWS-IoT-endpoint-here> 
+export CERTS_LOCATION=/home/ubuntu/environment/VoiceRoboticsWorkshop/robot_ws/src/alexa/certs/
+
+iii)Start the listener by running the roscore command in the terminal window.
+iv) Finally, let's send a message to the voice_command topic. Back in the AWS IoT console, click "Test" from the left navigation menu. Scroll to the bottom of the right pane to the Publish section. Specify the topic as voice_command, and change the payload to the following:
+{
+    "data": "forward"
+}
+v) Build, bundle, and upload the application using the following commands:
+Build:colcon build
+Bundle: colcon bundle
+Upload: aws s3 cp ~/environment/VoiceRoboticsWorkshop/robot_ws/bundle/output.tar s3://<your-bucket-name>/robot.tar
