@@ -16,5 +16,9 @@ iii) Creating a ROS Development Environment in AWS Robomaker
 
 iv) Update the default security group
 
+## Secure Communication with AWS IoT
+### MQTT 
+ MQTT is a widely adopted, lightweight messaging protocol designed for constrained devices. A common way to communicate with robotics remotely is to send messages to robots via MQTT messages. The system you build today will use X.509 Certificates to authenticate the robot with AWS IoT Core, allowing you to pass messages securely.
 
+We need to follow the following steps for establishing a secure communication with AWS IoT to useit to securely pass messages to your robot: create certificates, attach a new policy to our certificate and get the AWS IoT endpoint
 
