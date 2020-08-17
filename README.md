@@ -1,4 +1,4 @@
-# Alexa-Skill-for-Robot-Navigation
+# Alexa Skill for Robot Navigation
 
 ## Introduction:
 This skill aims to control robots with our voice using the Alexa Skills Kit. The following services have been used to design this Alexa skill:
